@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Install and build dockerfile
+    command: docker build -t apache2/mariadb .
+    when: ansible_distribution == "Ubuntu"
